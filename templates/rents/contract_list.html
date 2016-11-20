@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block page_title %}
+      {{ page_title }}
+{% endblock %}
+{% block block_content %}
+		<h3>{{ page_title }}</h3>
+		<button type="button" class="btn btn-success" onclick="location.href='{% url 'rents:contract_new' %}'">
+		New Contract
+		</button>
+		<div class="col-md-12">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Tenant</th>
+						<th>Amount</th>
+						<th>Date</th>
+						<th  width="10%">Acciones</th>
+					</tr>
+				</thead>
+				<tbody>
+			       {% for contract in object_list  %}
+					<tr>
+						<td>{{contract.id}}</td>
+						<td>{{contract.tenant}}</td>
+						<td>{{contract.amount}}</td>
+						<td>{{contract.date}}</td>
+						<!--Actions-->
+						<td>
+							<button type="button" class="btn-xs btn-default" aria-label="Left Align" onclick="location.href='{% url 'rents:contract_detail' contract.pk %}';">
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Ver"></span>
+							</button>
+							<button type="button" class="btn-xs btn-primary" aria-label="Left Align" onclick="location.href='{% url 'rents:contract_edit' contract.pk %}';">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true" title="Editar"></span>
+							</button>
+							<button type="button" class="btn-xs btn-danger" aria-label="Left Align" onclick="location.href='{% url 'rents:contract_delete' contract.pk %}';">
+							<span class="glyphicon glyphicon-trash" aria-hidden="true" title="Eliminar"></span>
+							</button>
+						</td>
+
+					</tr>
+					{% empty %}
+						<div class="alert alert-warning">
+						    <p>Contracts not found</p>
+						</div>
+			       {% endfor %}
+				</tbody>
+				
+			</table>
+		</div>
+{% endblock %}

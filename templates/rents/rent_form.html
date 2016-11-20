@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block page_title %}
+	New Rent	
+{% endblock page_title %}
+{% block block_content %}
+	{% load staticfiles %}
+
+
+	<form method="POST">
+   		{% csrf_token %}
+   		{% load bootstrap3 %}
+		{% bootstrap_javascript %}
+		<div class="col-md-10">
+			{% bootstrap_messages %}
+			{% bootstrap_form form %}
+		{% buttons %}
+	   		<button  class="btn btn-primary" type="submit">Save Rent</button>
+		{% endbuttons %}
+		</div>
+
+   	</form>
+{% endblock block_content %}

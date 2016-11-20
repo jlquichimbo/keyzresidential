@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block page_title %}
+      {{ page_title }}
+{% endblock %}
+{% block header_content %}
+   	<h3>{{ place }}
+   	</h3>
+{% endblock header_content %}
+
+{% block block_content %}
+	<div class="col-md-12 content_place">
+		<div class="place_title">Name </div>
+		<div class="place_content">{{place.name}}</div>
+		<div class="place_title">Type </div>
+		<div class="place_content">{{place.get_type_place_display}}</div>
+		<div class="place_title">Sector </div>
+		<div class="place_content">{{place.sector}}</div>
+		<div class="place_title">User Register </div>
+		<div class="place_content">{{place.user}}</div>
+
+	</div>
+	<p>
+		<a href="{% url 'places:list' %}">Back</a>
+	</p>
+{% endblock block_content %}

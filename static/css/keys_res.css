@@ -1,0 +1,9 @@
+div.content_place >  .place_title{
+  font-weight: bold;
+  font-size: 14px;
+}
+
+div.content_place >  .place_content{
+  font-size: 12px;
+  margin: 0em 0em 2em 2em;
+}

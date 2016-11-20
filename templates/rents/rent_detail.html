@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block page_title %}
+      {{ page_title }}
+{% endblock %}
+{% block header_content %}
+   	<h3>{{ rent }}
+   	</h3>
+{% endblock header_content %}
+
+{% block block_content %}
+	<div class="col-md-12 content_place">
+		<div class="place_title">Contract </div>
+		<div class="place_content">{{rent.contract}}</div>
+		<div class="place_title">Month </div>
+		<div class="place_content">{{rent.month}}</div>
+		<div class="place_title">Section 8 Amount </div>
+		<div class="place_content">{{rent.section8_amount}}</div>
+		<div class="place_title">Tenant Amount Due </div>
+		<div class="place_content">{{rent.tenant_amount_due}}</div>
+		<div class="place_title">Security Deposit Due </div>
+		<div class="place_content">{{rent.sec_deposit_due}}</div>
+		<div class="place_title">Miscellaneous Additional Fees </div>
+		<div class="place_content">{{rent.misc_add_fees}}</div>
+		<div class="place_title">Back Rent Amount Due </div>
+		<div class="place_content">{{rent.backrent_amount_due}}</div>
+		<div class="place_title">Tenant Total Amount Due </div>
+		<div class="place_content">{{rent.tenant_total_amount_due}}</div>
+		<div class="place_title">Total Paid </div>
+		<div class="place_content">{{rent.total_paid}}</div>
+		<div class="place_title">Month Balance </div>
+		<div class="place_content">{{rent.month_balance}}</div>
+	</div>
+	<p>
+		<a href="{% url 'rents:list' %}">Back</a>
+	</p>
+{% endblock block_content %}
