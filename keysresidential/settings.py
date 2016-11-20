@@ -39,18 +39,13 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     # SGTT
-    'usersUtpl.apps.UsersutplConfig',
-    'titulaciones.apps.TitulacionesConfig',
-    'propuestas.apps.PropuestasConfig',
-    'convocatorias.apps.ConvocatoriasConfig',
-    'rubricas.apps.RubricasConfig',
-    'revisions.apps.RevisionsConfig',
+    # keysResidential:
+    'rents.apps.RentsConfig',
+    'places.apps.PlacesConfig',
     # third party
-    'import_export',
-    'crispy_forms',
     'bootstrap3',
     'gunicorn',
-    'dj_database_url',
+    # 'dj_database_url',
 ]
 
 CRYSPY_TEMPLATE_PACK = 'bootstrap3'
@@ -158,7 +153,6 @@ STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-AUTH_USER_MODEL = 'usersUtpl.UserUtpl'
 
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
