@@ -1,1 +1,1 @@
-web: gunicorn sgtt.wsgi
+web: gunicorn keyzresidential.wsgi
