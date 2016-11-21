@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rents.apps.RentsConfig',
     'places.apps.PlacesConfig',
     # third party
+    'import_export',
     'bootstrap3',
     'gunicorn',
     # 'dj_database_url',
